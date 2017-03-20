@@ -93,7 +93,7 @@
 	       <span class="switch-handle"></span>
            </label> </td>
        <td><label class="switch switch-slide">
-	       <input class="switch-input" type="checkbox" onclick="set_visited(12); detect_bingo();" checked/>
+	       <input class="switch-input" type="checkbox" onclick="set_visited(12); detect_bingo();"/>
            <span class="switch-label"><p class="p" id="free">Free</p></span> 
 	       <span class="switch-handle"></span>
            </label> </td>
@@ -175,6 +175,8 @@
             
             <script>
                 var is_checked = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
+                var num_of_checks;
+                
             function GetValue()
 { 
 
@@ -263,39 +265,58 @@
 }
                 function set_visited(boxNum)
                 {
+                     if (is_checked == -1 )
+                        num_of_checks = num_of_checks + 1;
+                    else 
+                        num_of_checks = num_of_checks - 1;
+                   
                     is_checked[boxNum] = -1 * is_checked[boxNum];
+                   
+                    
                     
                 }
                 function detect_bingo()
                 {
-                 //   if("number if check < 5")
-                   //     return;
+                   if( num_of_checks < 5)
+                    return;
+                    
                     if(is_checked[0] == 1 && is_checked[1] == 1 && is_checked[2] == 1 && is_checked[3] == 1 && is_checked[4]== 1 )
                         window.alert("Bingo!");
+                    
                      if(is_checked[5] == 1 && is_checked[6] == 1 && is_checked[7] == 1 && is_checked[8] == 1 && is_checked[9]== 1 )
                         window.alert("Bingo!");
+                    
                      if(is_checked[10] == 1 && is_checked[11] == 1 && is_checked[12] == 1 && is_checked[13] == 1 && is_checked[14]== 1 )
                         window.alert("Bingo!");
+                    
                      if(is_checked[15] == 1 && is_checked[16] == 1 && is_checked[17] == 1 && is_checked[18] == 1 && is_checked[19]== 1 )
                         window.alert("Bingo!");
+                    
                      if(is_checked[20] == 1 && is_checked[21] == 1 && is_checked[22] == 1 && is_checked[23] == 1 && is_checked[24]== 1 )
                         window.alert("Bingo!");
+                    
                      if(is_checked[0] == 1 && is_checked[5] == 1 && is_checked[10] == 1 && is_checked[15] == 1 && is_checked[20]== 1 )
                         window.alert("Bingo!");
+                    
                      if(is_checked[1] == 1 && is_checked[6] == 1 && is_checked[11] == 1 && is_checked[16] == 1 && is_checked[21]== 1 )
                         window.alert("Bingo!");
+                    
                      if(is_checked[2] == 1 && is_checked[7] == 1 && is_checked[12] == 1 && is_checked[17] == 1 && is_checked[22]== 1 )
                         window.alert("Bingo!");
+                    
                      if(is_checked[3] == 1 && is_checked[8] == 1 && is_checked[13] == 1 && is_checked[18] == 1 && is_checked[23]== 1 )
                         window.alert("Bingo!");
+                    
                      if(is_checked[4] == 1 && is_checked[9] == 1 && is_checked[14] == 1 && is_checked[19] == 1 && is_checked[24]== 1 )
                         window.alert("Bingo!");
+                    
                     if(is_checked[0] == 1 && is_checked[6] == 1 && is_checked[12] == 1 && is_checked[18] == 1 && is_checked[24]== 1 )
                         window.alert("Bingo!");
+                    
                     if(is_checked[20] == 1 && is_checked[14] == 1 && is_checked[12] == 1 && is_checked[8] == 1 && is_checked[4]== 1 )
                         window.alert("Bingo!");
                 }
-                
+             
                         
             </script>
     
