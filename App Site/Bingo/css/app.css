@@ -1,0 +1,321 @@
+/* Disable certain interactions on touch devices */
+/* SOURCE: https://github.com/ftlabs/fastclick/blob/master/examples/input.html */
+/* LICENSE: https://github.com/ftlabs/fastclick/blob/master/LICENSE */
+body {
+    -webkit-touch-callout: none ;
+    -webkit-text-size-adjust: none ; -ms-text-size-adjust: none ;
+    -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;
+    -webkit-highlight: none ;
+    -webkit-tap-highlight-color: rgba(0,0,0,0) ;
+    -webkit-tap-highlight-color: transparent ;      /* For some Androids */
+}
+
+/* Recommended for Windows 8 Phone */
+/* SOURCE: http://www.excellentwebworld.com/common-problems-solution-for-windows-phone-8-phonegap */
+html {
+    -ms-touch-action: pan-x ;
+}
+
+/* Recommended for Windows 8 Phone */
+/* SOURCE: http://www.excellentwebworld.com/common-problems-solution-for-windows-phone-8-phonegap */
+body {
+    -ms-touch-action: pan-y ;
+    -ms-content-zooming: none ;
+}
+
+
+body {
+    /* margin: 0.5rem ; */
+    color: black ;
+    text-align: center;
+    background-color:#E4E4E4;
+    background-attachment:fixed;
+    text-transform:uppercase;
+    font-family: 'Merriweather', serif;
+}
+
+.align-center {
+    text-align: center ;
+}
+/* mystuff */
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+.board{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+.buttontable{
+    min-height:100px;
+    min-width: 90px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 12px;
+}
+.button {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	border: none;
+	color: white;
+	background: dimgray;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 12px;
+	width: 45%;
+	outline: none;
+    
+}
+.button_area{
+    align-content: center;
+}
+.button2{
+  display: inline-block;
+  border-radius: 4px;
+  background-color: dimgray;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 60px;
+  position:relative;
+}
+
+.button2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button2 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button2:hover span {
+  padding-right: 25px;
+}
+
+.button2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.p{
+    display: inline-block;
+    padding: 5px;
+    font-size: 9px;
+    text-decoration: none;
+    text-align: center;
+    height: 100px;
+}
+
+.switch {
+      position: relative;
+      display: block;
+      vertical-align: top;
+      width: 100px;
+      height: 30px;
+      padding: 3px;
+      margin: 0 10px 10px 0;
+      background: linear-gradient(to bottom, #eeeeee, #FFFFFF 25px);
+      background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF 25px);
+      border-radius: 18px;
+      box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+    }
+    .switch-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+        border-radius: 12px;
+    }
+    .switch-label {
+      position: relative;
+      display: block;
+      height: inherit;
+      font-size: 10px;
+      text-transform: uppercase;
+      background: #eceeef;
+      border-radius: inherit;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
+    }
+    .switch-label:before, .switch-label:after {
+      position: absolute;
+      top: 50%;
+        width: 90px;
+        height: 100px;
+      margin-top: -.5em;
+      line-height: 1;
+      -webkit-transition: inherit;
+      -moz-transition: inherit;
+      -o-transition: inherit;
+      transition: inherit;
+    font-size: 16px;
+    border-radius: 12px;
+    }
+    .switch-label:before {
+      content: attr(data-off);
+      right: 11px;
+      color: #aaaaaa;
+    }
+    .switch-label:after {
+      content: attr(data-on);
+      left: 11px;
+      color: #FFFFFF;
+      text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+    }
+    .switch-input:checked ~ .switch-label {
+   	  background: #E1B42B;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+    }
+    .switch-input:checked ~ .switch-label:before {
+      opacity: 0;
+    }
+    .switch-input:checked ~ .switch-label:after {
+      opacity: 1;
+    }
+    .switch-handle {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+      background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+      border-radius: 100%;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    border-radius: 12px;
+    }
+    .switch-handle:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -6px 0 0 -6px;
+      width: 12px;
+      height: 12px;
+      background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
+      background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF);
+      border-radius: 6px;
+      box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+    }
+    .switch-input:checked ~ .switch-handle {
+      left: 74px;
+      box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+    }
+    /* Transition
+        ========================== */
+    .switch-label, .switch-handle {
+      transition: All 0.3s ease;
+      -webkit-transition: All 0.3s ease;
+      -moz-transition: All 0.3s ease;
+      -o-transition: All 0.3s ease;
+        border-radius: 12px;
+
+    }
+
+
+
+
+.switch-slide {
+	padding: 0;
+	margin: 15px 0 0;
+	background: #FFF;
+	border-radius: 0;
+	background-image: none;
+    width: 90px;
+    height: 100px;
+    border-radius: 12px;
+}
+.switch-slide .switch-label {
+	box-shadow: none;
+	background: none;
+	overflow: hidden;
+    text-align: center;
+    border-radius: 12px;
+    
+}
+.switch-slide .switch-label:after, .switch-slide .switch-label:before {
+	width: 100%;
+	height: 65%;
+	top: 5px;
+	left: 0;
+	text-align: center;
+	padding-top: 10%;
+	box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 0 3px rgba(0, 0, 0, 0.1);
+    width: 90px;
+    min-height: 100px;
+    border-radius: 12px;
+}
+.switch-slide .switch-label:after {
+	color: #FFFFFF;
+	background:red;
+	left: -100px;
+    border-radius: 20px;
+    text-align: center;
+     animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+     width: 90px;
+    height: 100px;
+ 
+}
+.switch-slide .switch-label:before {
+    text-align: center;
+    border-radius: 12px;
+	
+}
+.switch-slide .switch-handle {
+	display: none;
+    border-radius: 12px;
+}
+.switch-slide .switch-input:checked ~ .switch-label {
+	background: #FFF;
+	border-color: #0088cc;
+    text-align: center;
+    
+
+}
+.switch-slide .switch-input:checked ~ .switch-label:before {
+	left: 100px;
+
+}
+.switch-slide .switch-input:checked ~ .switch-label:after {
+	left: 0;
+  
+}
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
