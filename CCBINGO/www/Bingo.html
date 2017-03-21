@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CC Bingo</title>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/app.css">
+    <script type="text/javascript">
+    function closeIframe() {
+    window.parent.ClosePop();
+}
+    
+    </script>
+    </head>
+<body>
+    <div class="button_area">
+        <button class="button2" onclick="closeIframe();"><span>Bingo!</span></button>
+    </div>    
+
+
+  <script src="cordova.js"></script>          <!-- "Phantom" cordova.js required for projects that use plugins -->
+    <script src="js/app.js"></script>           <!-- for your event code, see README and file comments for details -->
+    <script src="js/init-app.js"></script>      <!-- for your init code, see README and file comments for details -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see file for details -->
+
+   
+</body>
+
+</html>

@@ -4,7 +4,11 @@
     <title>CC Bingo</title>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
-    <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'><script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+
     <style>
         @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
         @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
@@ -281,42 +285,83 @@
                     return;
                     
                     if(is_checked[0] == 1 && is_checked[1] == 1 && is_checked[2] == 1 && is_checked[3] == 1 && is_checked[4]== 1 )
-                        window.alert("Bingo!");
+                        OpenPop();
                     
                      if(is_checked[5] == 1 && is_checked[6] == 1 && is_checked[7] == 1 && is_checked[8] == 1 && is_checked[9]== 1 )
-                        window.alert("Bingo!");
+                       OpenPop();
                     
                      if(is_checked[10] == 1 && is_checked[11] == 1 && is_checked[12] == 1 && is_checked[13] == 1 && is_checked[14]== 1 )
-                        window.alert("Bingo!");
+                       OpenPop();
                     
                      if(is_checked[15] == 1 && is_checked[16] == 1 && is_checked[17] == 1 && is_checked[18] == 1 && is_checked[19]== 1 )
-                        window.alert("Bingo!");
+                        OpenPop();
                     
                      if(is_checked[20] == 1 && is_checked[21] == 1 && is_checked[22] == 1 && is_checked[23] == 1 && is_checked[24]== 1 )
-                        window.alert("Bingo!");
+                       OpenPop();
                     
                      if(is_checked[0] == 1 && is_checked[5] == 1 && is_checked[10] == 1 && is_checked[15] == 1 && is_checked[20]== 1 )
-                        window.alert("Bingo!");
+                        OpenPop();
                     
                      if(is_checked[1] == 1 && is_checked[6] == 1 && is_checked[11] == 1 && is_checked[16] == 1 && is_checked[21]== 1 )
-                        window.alert("Bingo!");
+                        OpenPop();
                     
                      if(is_checked[2] == 1 && is_checked[7] == 1 && is_checked[12] == 1 && is_checked[17] == 1 && is_checked[22]== 1 )
-                        window.alert("Bingo!");
+                       OpenPop();
                     
                      if(is_checked[3] == 1 && is_checked[8] == 1 && is_checked[13] == 1 && is_checked[18] == 1 && is_checked[23]== 1 )
-                        window.alert("Bingo!");
+                        OpenPop();
                     
                      if(is_checked[4] == 1 && is_checked[9] == 1 && is_checked[14] == 1 && is_checked[19] == 1 && is_checked[24]== 1 )
-                        window.alert("Bingo!");
+                        OpenPop();
                     
                     if(is_checked[0] == 1 && is_checked[6] == 1 && is_checked[12] == 1 && is_checked[18] == 1 && is_checked[24]== 1 )
-                        window.alert("Bingo!");
+                        OpenPop();
                     
-                    if(is_checked[20] == 1 && is_checked[14] == 1 && is_checked[12] == 1 && is_checked[8] == 1 && is_checked[4]== 1 )
-                        window.alert("Bingo!");
+                    if(is_checked[20] == 1 && is_checked[16] == 1 && is_checked[12] == 1 && is_checked[8] == 1 && is_checked[4]== 1 )
+                        OpenPop();
+                     
                 }
-             
+                  function OpenPop() {
+           // var popper=window.open('Bingo.html','_blank','width=400,height=400');
+  //popper.focus();
+                 window.scrollTo(0, 0);
+            var width = document.documentElement.clientWidth + document.documentElement.scrollLeft;
+            var height = document.documentElement.clientHeight + document.documentElement.scrollTop;
+            var layer = document.createElement("div");
+            layer.style.zIndex = 2;
+            layer.id = "layer";
+            layer.style.position = "absolute";
+            layer.style.top = "0px";
+            layer.style.left = "0px";
+            layer.style.height = document.documentElement.scrollHeight + "px";
+            layer.style.width = width + "px";
+            layer.style.backgroundColor = "black";
+            layer.style.opacity = "0.75";
+            layer.style.filter += ("progid:DXImageTransform.Microsoft.Alpha(opacity=75)");
+            document.body.style.position = "static";
+            document.body.appendChild(layer);
+            var size = { "height": 220, "width": 400 };
+            var iframe = document.createElement("iframe");
+            var popUrl = 'Bingo.htm';
+            iframe.name = "Logic Form";
+            iframe.id = "popup";
+            iframe.src = "Bingo.html";
+            iframe.style.height = size.height + "px";
+            iframe.style.width = size.width + "px";
+            iframe.style.position = "fixed";
+            iframe.style.zIndex = 3;
+            iframe.style.backgroundColor = "white";
+            iframe.frameborder = "1";
+            iframe.style.top = ((height + document.documentElement.scrollTop) / 2) - (size.height / 2) + "px";
+            iframe.style.left = (width / 2) - (size.width / 2) + "px";
+            document.body.appendChild(iframe);
+        }
+            function ClosePop() {
+    var layer = document.getElementById("layer");
+    var iframe = document.getElementById("popup");
+    document.body.removeChild(layer); // remove layer
+    document.body.removeChild(iframe); // remove div
+}
                         
             </script>
     
